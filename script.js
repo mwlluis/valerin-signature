@@ -1,23 +1,22 @@
-document
-  .getElementById("execButton")
-  .addEventListener("click", function (event) {
-    event.preventDefault();
-    //these have to be in the scope of the function
-    //i think you need to create an array with the values
-    //what other event listeners are there
-    let firstName = document.getElementById("firstName").value;
-    let lastName = document.getElementById("lastName").value;
-    let position = document.getElementById("position").value;
-    let email = document.getElementById("email").value;
-    let phone = document.getElementById("phone").value;
+const firstName = document.getElementById("firstName");
+const lastName = document.getElementById("lastName");
+const position = document.getElementById("position");
+const email = document.getElementById("email");
+const phone = document.getElementById("phone");
+let signature = document.getElementById("output");
+let execButton = document.getElementById("execButton");
 
-    document.getElementById("output").innerHTML = `
-<p>${firstName}</p>
-<p>${lastName}</p>
-<p>${position}</p>
-<p>${email}</p>
-<p>${phone}</p>
-`;
-  });
 
-//trying to create a variable and adding an event listener did not work, using doc getelement etc did work
+
+
+execButton.addEventListener("click", function (event) {
+  event.preventDefault();
+  console.log("click");
+  signature.innerHTML = `
+  <p>${firstName.value}</p>
+  <p>${lastName.value}</p>
+  <p>${position.value}</p>
+  <p>${email.value}</p>
+  <p>${phone.value}</p>
+  `;
+});
